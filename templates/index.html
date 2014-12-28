@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>호텔예약서비스 : 호예</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+{% include 'navi.html' %}
+
+<div class="row">
+
+    {% for i in range(0,5) %}
+        <div class="col-md-8 col-md-offset-2">
+            <div class="well">
+                <div class="media">
+                    <a class="media-left" href="#">
+                        <img src="http://imagizer.imageshack.us/v2/150x100q90/538/BY1zX5.jpg" border="0">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading">서울에서 전망좋은 호텔</h4>
+                        <p>내가 제일 좋아하는 호텔입니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% include 'footer.html' %}
+
+</body>
+</html>
