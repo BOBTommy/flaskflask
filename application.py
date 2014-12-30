@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from flask import Flask
-from flask import render_template, redirect, url_for
+from flask import render_template, redirect, url_for, session, request
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -31,8 +31,11 @@ def login():
 
 @app.route('/login_process', methods=['POST'])
 def login_process():
-
+    session['user_name'] = request.form['user_email']
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+# Secret key for session
+app.secret_key = '\xea\xdd\x1eB8r\xe1\xf7\xf7\x13:\xacr\xca/\xec\x04\xa1\xf9\xcb\xafIV\\'
