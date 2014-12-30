@@ -14,7 +14,7 @@ class User(db.Model):
     user_password = db.Column(db.String)
 
     def __repr__(self):
-        return "<User %r>" % self.user_email
+        return u"%r" % self.user_email
 
 
 @app.route('/')
