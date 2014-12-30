@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from flask import Flask
-from flask import render_template
+from flask import render_template, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -28,6 +28,11 @@ def login():
     c_set = [u"서울", u"판교", u"파리", u"도쿄"]
     return render_template('login.html',
                            c_set=c_set)
+
+@app.route('/login_process', methods=['POST'])
+def login_process():
+
+    return redirect(url_for('index'))
 
 if __name__ == '__main__':
     app.run(debug=True)
